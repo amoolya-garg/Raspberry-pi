@@ -14,8 +14,10 @@ def connect():
     while wlan.isconnected() == False:
             print("Waiting for connection...")
             sleep(1)
-    try:
-        connect()
-    except KeyboardInterrupt:
+    print("Connection Successful")
+    print(wlan.ifconfig())    
+try:
+    connect()
+except KeyboardInterrupt:
         machine.reset()
         
